@@ -12,6 +12,22 @@
   }
 }
 @media screen and (max-width:1400px){
+  .swiper-button-prev {
+      width: 50px;
+      height: 50px;
+      &::after {
+          height: 9px;
+          width: 24px;
+      }
+    }
+  .swiper-button-next {
+      width: 50px;
+      height: 50px;
+      &::after {
+          height: 9px;
+          width: 24px;
+      }
+  }
   // VIDEO SWIPER
   .swiper-1 {
     width: 100%;
@@ -20,22 +36,10 @@
       width: 90%;
     }
     .swiper-button-prev{
-        width: 50px;
-        height: 50px;
         left: 20px;
-        &::after {
-            height: 9px;
-            width: 24px;
-        }
     }
     .swiper-button-next{
-        width: 50px;
-        height: 50px;
         right: 20px;
-        &::after {
-            height: 9px;
-            width: 24px;
-        }
     }
   }
   .after-description {
@@ -94,16 +98,16 @@
     font-size: 30px;
     margin-bottom: 75px;
   }
-  .description-whom-list {
+  .description-list {
     margin-bottom: 100px;
   }
-  .description-whom-item__label{ 
+  .description-item__label{ 
     font-size: 24px;
   }
-  .description-whom-item {
+  .description-item {
     padding-bottom: 50px;
   }
-  .description-whom-item__text {
+  .description-item-information__text {
     font-size: 16px;
   }
   .author-description {
@@ -208,13 +212,14 @@
         background: rgba(0,0,0, 0.4);
       }
     }
+    .swiper-button-prev {
+      top: 30px;
+    }
+    .swiper-button-next {
+      top: 30px;
+    }
   }
-  .swiper-button-prev {
-    top: 30px;
-  }
-  .swiper-button-next {
-    top: 30px;
-  }
+  
   .after-description {
     padding-left: 15px;
     padding-bottom: 15px;
@@ -297,10 +302,10 @@
   .description-whom__title{
     margin-bottom: 25px;
   }
-  .description-whom-item__label{
+  .description-item__label{
     font-size: 18px;
   }
-  .description-whom-item__text {
+  .description-item-information__text {
     font-size: 14px;
   }
   .author__title{
@@ -364,7 +369,7 @@
       font-size: 20px;
       text-align: center;
   }
-  .description-whom-list {
+  .description-list {
     margin-bottom: 50px;
   }
   .author-wrapper{
@@ -380,9 +385,6 @@
       font-size: 14px;
     }
   }
-  .after{
-    margin-bottom: 50px;
-  }
   .video {
     width: 100%;
     height: 60vw;
@@ -392,18 +394,18 @@
   }
 }
 @media screen and (max-width:480px){
+  .swiper-button-prev{
+    width: 35px;
+    height: 35px;
+  }
+  .swiper-button-next{
+    width: 35px;
+    height: 35px;
+  }
   .swiper-1 {
     .swiper-slide {
       padding-top: 75px;
       padding-bottom: 25px;
-    }
-    .swiper-button-prev{
-      width: 35px;
-      height: 35px;
-    }
-    .swiper-button-next{
-      width: 35px;
-      height: 35px;
     }
   }
   .after-description__title{
@@ -417,14 +419,14 @@
   }
 }
 @media screen and (max-width:414px){
-  .description-whom-item {
+  .description-item {
     padding-bottom: 25px;
     border-width: 1px;
   }
-  .description-whom-item__label{
+  .description-item__label{
     font-size: 16px;
   }
-  .description-whom-item__text{
+  .description-item-information__text{
     font-size: 12px;
   }
 }

@@ -146,7 +146,7 @@ function scrollToElement(element) {
       'style',
       'position: relative; height: auto; overflow: auto;');
     // INIT SWIPER JS
-    const videoSwiper = new Swiper('.swiper-container', {
+    const videoSwiper = new Swiper('.swiper-1', {
       direction: 'horizontal',
       loop: false,
       slidesPerView: 'auto',
@@ -173,6 +173,18 @@ function scrollToElement(element) {
       })
       videoElement[event.snapIndex].play();
     });
+    const reviewsSwiper = new Swiper('.swiper-3', {
+      direction: 'horizontal',
+      loop: false,
+      slidesPerView: 1,
+      resistance: true,
+      resistanceRatio: 0,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    })
   }
   document.querySelector(element).scrollIntoView({
     behavior: 'smooth'
