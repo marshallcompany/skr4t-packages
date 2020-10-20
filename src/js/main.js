@@ -130,7 +130,7 @@ function mode() {
     }
     if (element.classList.contains('dark-mode')) {
       element.classList.remove('dark-mode');
-      navigationElements.classList.add('light-mode');
+      element.classList.add('light-mode');
     } else {
       element.classList.add('dark-mode');
     }
@@ -173,23 +173,36 @@ function scrollToElement(element) {
       })
       videoElement[event.snapIndex].play();
     });
-    const reviewsSwiper = new Swiper('.swiper-3', {
-      direction: 'horizontal',
-      loop: false,
-      slidesPerView: 1,
-      resistance: true,
-      resistanceRatio: 0,
-      spaceBetween: 20,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }
-    })
   }
   document.querySelector(element).scrollIntoView({
     behavior: 'smooth'
   });
 }
+
+const bonusSwiper = new Swiper('.swiper-2', {
+  effect: 'flip',
+  direction: 'vertical',
+  loop: false,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
+});
+
+const reviewsTitle = document.querySelector('.reviews__title');
+document.querySelector('.swiper-3').style.marginLeft = `${reviewsTitle.getBoundingClientRect().x}px`;
+const reviewsSwiper = new Swiper('.swiper-3', {
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 'auto',
+  spaceBetween: 10,
+  autoHeight: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
+});
+
 
 
 // HEADER NAVIGATION

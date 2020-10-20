@@ -80,11 +80,13 @@
       padding-bottom: 250px;
     }
   }
-  .information-check {
-    font-size: 16px;
+  .information-course {
     width: 40%;
-    br {
-      display: none;
+    &__text {
+      font-size: 16px;
+      br {
+        display: none;
+      }
     }
   }
   .description {
@@ -141,11 +143,13 @@
     display: block;
     width: inherit;
   }
-  .information-check {
+  .information-course {
     width: inherit;
     right: 0;
-    br {
-      display: block;
+    &__text {
+      br {
+        display: block;
+      }
     }
   }
   .author .text {
@@ -282,15 +286,17 @@
     flex-direction: column;
     padding-bottom: 25px;
   }
-  .information-check {
+  .information-course {
     width: 90%;
     position: inherit;
     right: inherit;
     bottom: inherit;
     text-align: center;
     padding-top: 50px;
-    br{
-      display: none;
+    &__text {
+      br{
+        display: none;
+      }
     }
   }
   .description {
@@ -359,7 +365,7 @@
   .text__title {
     font-size: 12px;
   }
-  .information-check {
+  .information-course__text {
     font-size: 14px;
   }
   .description{
