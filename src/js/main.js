@@ -223,3 +223,34 @@ window.addEventListener('scroll', (event) => {
     document.querySelector('.header-navigation').style.transform = 'translateY(-100%)'
   }
 })
+// PROBLEMS VIDEO
+// document.querySelector('.problems-video').offsetHeight
+const problemsSection = document.querySelector('.problems-video');
+const problemsVideoWrappers = document.querySelectorAll('.problems-video-wrapper');
+const problemsVideoClips = document.querySelectorAll('.problems-video-wrapper .video-clip');
+const problemsVideoContent = document.querySelectorAll('.problems-video-item');
+problemsVideoClips[0].play();
+
+function resizeSection() {
+  problemsSection.style.height = `${problemsVideoWrappers[0].offsetHeight}px`;
+  problemsSection.style.paddingBottom = `${problemsSection.offsetHeight - problemsVideoWrappers[0].offsetHeight}px`;
+}
+resizeSection();
+
+problemsSection.addEventListener('scroll', (e) => {
+  document.querySelector('.problems-video .container').style.top = `${e.target.scrollTop}px`;
+  problemsVideoWrappers.forEach((element, index) => {
+    const offsetElement = element.getBoundingClientRect().top - problemsSection.getBoundingClientRect().top;
+    if (Math.abs(offsetElement) <= element.offsetHeight / 2 || offsetElement === 0) {
+      problemsVideoContent[index].style.opacity = '1';
+      problemsVideoClips[index].play();
+    } else {
+      move(index);
+    }
+  })
+})
+
+function move(index) {
+  problemsVideoContent[index].style.opacity = '0';
+  problemsVideoClips[index].pause();
+}

@@ -660,6 +660,102 @@ body {
   .problems .text {
     color: #ffffff; }
 
+.problems-video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  background-color: #000000;
+  overflow: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  position: relative; }
+  .problems-video .container {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 2; }
+
+.problems-video::-webkit-scrollbar {
+  display: none; }
+
+.problems-video-wrapper {
+  max-width: 900px;
+  width: 100%;
+  height: 600px;
+  background-color: #8f8a8a;
+  position: relative;
+  -ms-flex-negative: 0;
+  flex-shrink: 0; }
+  .problems-video-wrapper .video-clip {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%); }
+  .problems-video-wrapper:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1; }
+  .problems-video-wrapper:nth-child(2) {
+    background-color: #f4f4f4; }
+  .problems-video-wrapper:nth-child(3) {
+    background-color: #867c7c; }
+
+.problems-video-item {
+  max-width: 870px;
+  width: 100%;
+  padding-top: 11px;
+  border-top: 2px solid #ffffff;
+  position: absolute;
+  left: 0;
+  top: 100px;
+  opacity: 0;
+  -webkit-transition: opacity .35s ease-in-out;
+  -o-transition: opacity .35s ease-in-out;
+  transition: opacity .35s ease-in-out; }
+  .problems-video-item:nth-child(1) {
+    opacity: 1; }
+
+.problems-video-item__label {
+  margin-bottom: 50px;
+  font-family: "Soyuz Grotesk Bold";
+  font-size: 26px;
+  color: #ffffff; }
+
+.problems-video-item__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 5px;
+  color: #ffffff; }
+  .problems-video-item__text:last-child {
+    margin-bottom: 0; }
+  .problems-video-item__text .x {
+    width: 16px;
+    height: 16px;
+    -webkit-transform: translateY(2px);
+    -ms-transform: translateY(2px);
+    transform: translateY(2px);
+    margin-right: 10px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0; }
+
 .course-program {
   background: -o-linear-gradient(238.9deg, #5D24D5 0%, #2F17C0 100%);
   background: linear-gradient(211.1deg, #5D24D5 0%, #2F17C0 100%);
