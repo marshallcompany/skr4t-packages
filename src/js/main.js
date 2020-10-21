@@ -238,6 +238,7 @@ function resizeSection() {
 }
 problemsSection.addEventListener('scroll', (e) => {
   // document.querySelector('.problems-video .container').style.top = `${e.target.scrollTop}px`;
+  document.querySelector('.arrow').style.display = 'none';
   problemsVideoWrappers.forEach((element, index) => {
     const offsetElement = element.getBoundingClientRect().top - problemsSection.getBoundingClientRect().top;
     if (Math.abs(offsetElement) <= element.offsetHeight / 2 || offsetElement === 0) {
