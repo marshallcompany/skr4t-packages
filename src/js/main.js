@@ -146,64 +146,74 @@ function scrollToElement(element) {
       'style',
       'position: relative; height: auto; overflow: auto;');
     // INIT SWIPER JS
-    const videoSwiper = new Swiper('.swiper-1', {
-      direction: 'horizontal',
-      loop: false,
-      slidesPerView: 'auto',
-      resistance: true,
-      resistanceRatio: 0,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        320: {
-          autoHeight: true
-        },
-        768: {
-          autoHeight: false
-        },
-      }
-    })
-    videoSwiper.on('transitionStart', function (event) {
-      const videoElement = document.querySelectorAll('.video-clip');
-      videoElement.forEach(el => {
-        el.pause();
-        el.currentTime = 0;
-      })
-      videoElement[event.snapIndex].play();
-    });
+    swiperInit();
   }
   document.querySelector(element).scrollIntoView({
     behavior: 'smooth'
   });
 }
 
-const bonusSwiper = new Swiper('.swiper-2', {
-  effect: 'flip',
-  direction: 'vertical',
-  loop: false,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  }
+
+
+
+
+// SWIPER INIT
+function swiperInit() {
+  const reviewsTitle = document.querySelector('.reviews__title');
+  document.querySelector('.swiper-3').style.marginLeft = `${reviewsTitle.getBoundingClientRect().x}px`;
+  const videoSwiper = new Swiper('.swiper-1', {
+    direction: 'horizontal',
+    loop: false,
+    slidesPerView: 'auto',
+    resistance: true,
+    resistanceRatio: 0,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      320: {
+        autoHeight: true
+      },
+      768: {
+        autoHeight: false
+      },
+    }
+  })
+  videoSwiper.on('transitionStart', function (event) {
+    const videoElement = document.querySelectorAll('.video-clip');
+    videoElement.forEach(el => {
+      el.pause();
+      el.currentTime = 0;
+    })
+    videoElement[event.snapIndex].play();
+  });
+  new Swiper('.swiper-2', {
+    effect: 'flip',
+    direction: 'vertical',
+    loop: false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+  new Swiper('.swiper-3', {
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    autoHeight: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+}
+swiperInit();
+window.addEventListener('resize', () => {
+  const reviewsTitle = document.querySelector('.reviews__title');
+  document.querySelector('.swiper-3').style.marginLeft = `${reviewsTitle.getBoundingClientRect().x}px`;
 });
-
-const reviewsTitle = document.querySelector('.reviews__title');
-document.querySelector('.swiper-3').style.marginLeft = `${reviewsTitle.getBoundingClientRect().x}px`;
-const reviewsSwiper = new Swiper('.swiper-3', {
-  direction: 'horizontal',
-  loop: true,
-  slidesPerView: 'auto',
-  spaceBetween: 10,
-  autoHeight: true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  }
-});
-
-
 
 // HEADER NAVIGATION
 window.addEventListener('scroll', (event) => {

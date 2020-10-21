@@ -2,7 +2,10 @@
 @import 'theme/fonts';
 @import 'theme/variables';
 
-
+body,
+html {
+    overflow-x: hidden;
+}
 body {
     color: #000000;
     background-color: #ffffff;
@@ -117,18 +120,13 @@ body {
             background-color:  #5D24D4;
         }
     }
-    &.border-none {
-        &:before {
-            display: none;
-            
-        }
-        .x__item {
-            border: none!important;
-        }
-    }
     &.x_dark {
         .x__item {
             background-color: #000000;
+        }
+    }
+    &.x_dark.x_outline {
+        .x__item {
             border: 1px solid #ffffff;
         }
         &:before{
@@ -150,10 +148,8 @@ body {
     .description-item {
         border-top-color: #ffffff;
     }
-    .x.border-none{
-        .x__item {
-            background-color: #ffffff!important;
-        }
+    .x_dark:not(.x_outline) .x__item {
+        background-color: #ffffff!important;
     }
     * {
         color: #ffffff!important;
@@ -164,6 +160,14 @@ body {
 
 .light-mode {
     background-color: #ffffff!important;
+    .x_dark .x__item {
+        background-color: #000000!important;
+    }
+    .x.x_outline{
+        .x__item {
+            background-color: #000000!important;
+        }
+    }
     * {
         color: #000000!important;
         fill: #000000!important;
@@ -754,7 +758,8 @@ body {
 }
 .swiper-2 {
     height: 500px;
-    width: 870px;
+    max-width: 870px;
+    width: 100%;
     transform: translateY(100px);
     .swiper-button-prev {
         right: -41px;
