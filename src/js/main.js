@@ -147,6 +147,8 @@ function scrollToElement(element) {
       'position: relative; height: auto; overflow: auto;');
     // INIT SWIPER JS
     swiperInit();
+    problemsVideoClips[0].play();
+    resizeSection();
   }
   document.querySelector(element).scrollIntoView({
     behavior: 'smooth'
@@ -209,7 +211,6 @@ function swiperInit() {
     }
   });
 }
-swiperInit();
 window.addEventListener('resize', () => {
   const reviewsTitle = document.querySelector('.reviews__title');
   document.querySelector('.swiper-3').style.marginLeft = `${reviewsTitle.getBoundingClientRect().x}px`;
@@ -229,16 +230,14 @@ const problemsSection = document.querySelector('.problems-video');
 const problemsVideoWrappers = document.querySelectorAll('.problems-video-wrapper');
 const problemsVideoClips = document.querySelectorAll('.problems-video-wrapper .video-clip');
 const problemsVideoContent = document.querySelectorAll('.problems-video-item');
-problemsVideoClips[0].play();
+
 
 function resizeSection() {
   problemsSection.style.height = `${problemsVideoWrappers[0].offsetHeight}px`;
   problemsSection.style.paddingBottom = `${problemsSection.offsetHeight - problemsVideoWrappers[0].offsetHeight}px`;
 }
-resizeSection();
-
 problemsSection.addEventListener('scroll', (e) => {
-  document.querySelector('.problems-video .container').style.top = `${e.target.scrollTop}px`;
+  // document.querySelector('.problems-video .container').style.top = `${e.target.scrollTop}px`;
   problemsVideoWrappers.forEach((element, index) => {
     const offsetElement = element.getBoundingClientRect().top - problemsSection.getBoundingClientRect().top;
     if (Math.abs(offsetElement) <= element.offsetHeight / 2 || offsetElement === 0) {

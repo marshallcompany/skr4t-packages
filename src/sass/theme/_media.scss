@@ -150,6 +150,23 @@
   .course-advantages__image {
     height: 400px;
   }
+  .problems-video-item {
+		left: 15px;
+  }
+  .problems-video-item__text {
+    font-size: 16px;
+  }
+  .problems-video-item__label {
+    margin-bottom: 25px;
+  }
+  .problems-video-item__text .x {
+    height: 10px;
+    width: 10px;
+    transform: translateY(4px);
+    &__item {
+      height: 3px;
+    }
+  }
 }
 @media screen and (max-width:992px){
   .header-navigation {
@@ -257,6 +274,9 @@
     font-size: 14px;
   }
   // NEW SECTIONS
+  .problems-video-item {
+		left: 10px;
+	}
   .title {
     font-size: 75px;
     &__2 {
@@ -495,6 +515,9 @@
     border: none;
   }
   // NEW SECTIONS
+  .problems-video-item {
+    left: 5px;
+	}
   .title{
      font-size: 60px;
      &__2 {
@@ -694,6 +717,19 @@
     font-size: 40px;
   }
   // NEW SECTION
+  .problems-video-item {
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    top: 25px;
+  }
+  .problems-video-wrapper {
+    height: 550px;
+  }
+  .problems-video-item__text {
+    font-size: 14px;
+  }
   .info-nav {
     .button {
       margin-right: 0;
